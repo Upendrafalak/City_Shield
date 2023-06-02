@@ -27,14 +27,14 @@ export default NextAuth({
         // Add logic here to look up the user from the credentials supplied
 
         if (
-          credentials.username === "sarvesh" &&
-          credentials.password === "sarvesh "
+          credentials.username === "upendra" &&
+          credentials.password === "upendra "
         ) {
           // Any object returned will be saved in `user` property of the JWT
           return {
             id: 2,
-            name: "Sarvesh",
-            email: "sarvesh2902@gmail.com",
+            name: "Upendra",
+            email: "falakupendra@gmail.com",
           };
         } else {
           // If you return null then an error will be displayed advising the user to check their details.
