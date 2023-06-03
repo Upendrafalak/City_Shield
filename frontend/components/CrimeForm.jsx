@@ -14,14 +14,11 @@ const CrimeForm = () => {
   const [evidance, setEvidance] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-<<<<<<< HEAD
   const [imageSrc, setImageSrc] = useState();
   const [uploadImage, setuploadImage] = useState();
 
 
-=======
   const [crime_details, setCrime_details] = useState("");
->>>>>>> 9dd68f016196c2a843b4e0f4c572571e51d7bc2f
   //   const [packPrice, setPackPrice] = useState("");
   //   const [firstLineDesignation, setFirstLineDesignation] = useState(false);
   //   const [weightKilograms, setWeightKilograms] = useState("");
@@ -45,17 +42,14 @@ const CrimeForm = () => {
   const handleNumberChange = (e) => {
     setNumber(e.target.value);
   };
-<<<<<<< HEAD
   const handleImageChange = (e) => {
     setImageSrc(e.target.value);
   };
-=======
 
   const handleCrime_detailsChange = (e) => {
     setCrime_details(e.target.value);
   };
 
->>>>>>> 9dd68f016196c2a843b4e0f4c572571e51d7bc2f
   //   const handlePackPriceChange = (e) => {
   //     setPackPrice(e.target.value);
   //   };
@@ -76,7 +70,6 @@ const CrimeForm = () => {
     formData.append("evidance", evidance);
     formData.append("email", email);
     formData.append("number", number);
-<<<<<<< HEAD
     console.log(e.currentTarget);
     // formData.append("packPrice", packPrice);
     // formData.append("firstLineDesignation", firstLineDesignation);
@@ -98,7 +91,6 @@ const CrimeForm = () => {
     } catch (error) {
       console.log(error);
     }
-=======
     formData.append("crime_details", crime_details);
     // formData.append("packPrice", packPrice);
     // formData.append("firstLineDesignation", firstLineDesignation);
@@ -127,7 +119,6 @@ const CrimeForm = () => {
       email: "",
       number: 0,
     });
->>>>>>> 9dd68f016196c2a843b4e0f4c572571e51d7bc2f
   };
 
   return (
