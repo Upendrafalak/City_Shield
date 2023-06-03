@@ -37,9 +37,9 @@ const OnlineCrimeForm = () => {
     setNumber(e.target.value);
   };
 
-  const handleProgressChange = (e) => {
-    setProgress(e.target.value);
-  };
+  // const handleProgressChange = (e) => {
+  //   setProgress(e.target.value);
+  // };
 
   //   const handlePackPriceChange = (e) => {
   //     setPackPrice(e.target.value);
@@ -55,34 +55,35 @@ const OnlineCrimeForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("fullname", fullname);
-    formData.append("tweet", tweet);
-    formData.append("username", username);
-    formData.append("evidance", evidance);
-    formData.append("email", email);
-    formData.append("number", number);
-    formData.append("progress", progress);
-    // formData.append("packPrice", packPrice);
+    // const formData = new FormData();
+    // formData.append("fullname", fullname);
+    // formData.append("tweet", tweet);
+    // formData.append("username", username);
+    // formData.append("evidance", evidance);
+    // formData.append("email", email);
+    // formData.append("number", number);
+    // formData.append("progress", progress);
+    // // formData.append("packPrice", packPrice);
     // formData.append("firstLineDesignation", firstLineDesignation);
     // formData.append("weightKilograms", weightKilograms);
-    try {
-      const response = await axios.post("/api/upload", formData);
-      console.log(response.data);
-      // reset form fields
-      setFullname("");
-      setTweet("");
-      setUsername("");
-      setEvidance("");
-      setEmail("");
-      setNumber("");
-      setProgress("In Review");
-      //   setPackPrice("");
-      //   setFirstLineDesignation(false);
-      //   setWeightKilograms("");
-    } catch (error) {
-      console.log(error);
-    }
+    await axios
+      .post("http://localhost:3000/api/onlinecrimes", {
+        fullname: fullname,
+        tweet: tweet,
+        username: username,
+        email: email,
+        number: number,
+        progress: progress,
+      })
+      .then(function (response) {
+        data = response.data;
+        console.log(data);
+        setOutput(data);
+        console.log(output);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -171,8 +172,8 @@ const OnlineCrimeForm = () => {
               </label>
               <input
                 className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                type="text"
-                id="lineItemValue"
+                type="number"
+                id="number"
                 value={number}
                 onChange={handleNumberChange}
               />
@@ -236,6 +237,7 @@ const OnlineCrimeForm = () => {
               <button
                 type="submit"
                 className="w-96 h-12 flex justify-center items-center text-md text-white bg-blueGray-800 hover:bg-blueGray-800 transition-all font-medium rounded-lg px-5 py-2.5 text-center"
+                onClick={handleSubmit}
               >
                 Submit
               </button>
@@ -248,8 +250,8 @@ const OnlineCrimeForm = () => {
 };
 
 export default OnlineCrimeForm;
-{
-  /* <div className="w-full mb-12 xl:mb-0 px-4">
-<TransportForm/>
-</div> */
-}
+// {
+//   /* <div className="w-full mb-12 xl:mb-0 px-4">
+// <TransportForm/>
+// </div> */
+// }

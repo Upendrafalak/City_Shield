@@ -1,19 +1,19 @@
 import Admin from "layouts/Admin.js";
 import axios from "axios";
 
-import TableComponent from "components/Cards/TableComponent";
+import OnlineTableComponent from "components/Cards/OnlineTableComponent";
 
-export default function Tables({ crimes }) {
+export default function Tables({ onlinecrimes }) {
   return (
     <>
       <div className="flex flex-wrap">
-        {" "}
+        {/* {" "} */}
         {/* <div className="text-lg">
           <p className="font-bold">Analysis: </p>
           <p>{TableData[1]}</p>
         </div> */}
         <div className="w-full mb-12 px-4 mt-4">
-          <TableComponent crimes={crimes} />
+          <OnlineTableComponent onlinecrimes={onlinecrimes} />
         </div>
       </div>
     </>
@@ -21,12 +21,14 @@ export default function Tables({ crimes }) {
 }
 
 export const getStaticProps = async () => {
-  const crimes = await axios.get("http://localhost:3000/api/crimes");
+  const onlinecrimes = await axios.get(
+    "http://localhost:3000/api/onlinecrimes"
+  );
 
   // console.log(res);
   return {
     props: {
-      crimes: crimes.data,
+      onlinecrimes: onlinecrimes.data,
       //   piechart: piechart.data,
     },
   };

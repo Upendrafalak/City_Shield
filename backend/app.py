@@ -17,7 +17,7 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
 model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
-@app.route("/analyzetweets", methods=["GET"])
+@app.route("/analyzetweets", methods=["POST"])
 def analyzetweets():
     data = request.get_json()
     tweet = data['tweet']
