@@ -38,7 +38,7 @@ export default function Navbar(props) {
                 className="text-blueGray-700 text-xl font-bold leading-relaxed inline-block mr-4 py-4 whitespace-nowrap uppercase px-2"
                 href="#pablo"
               >
-                Demeter
+                Crime
               </a>
             </Link>
             </div>
@@ -73,53 +73,58 @@ export default function Navbar(props) {
                 <IndexDropdown />
               </li> */}
               <li className="flex items-center">
-                <Link href="/">
+                <Link href="/CrimeForm">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
-                    Home
+                    Raise a FIR
                     {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
                   </a>
                 </Link>
               </li>
               <li className="flex items-center">
-                <Link href="/disease">
+                {/* <Link href="/disease"> */}
+                <Link href="/ReportBullying">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
-                    Disease
+                    Report Cyberbullying
                     {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
                   </a>
                 </Link>
               </li>
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <Link href="/crop">
+                <Link href="/">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     Crop
                     {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
-                  </a>
-                </Link>
-              </li>
-              <li className="flex items-center">
+                  {/* </a> */}
+                {/* </Link> */}
+              {/* </li> */}
+              {/* <li className="flex items-center">
                 <Link href="/fertilizer">
+                <Link href="/">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     Fertilizer
-                    {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
+                    <span className="lg:hidden inline-block ml-2">Share</span>
                   </a>
                 </Link>
-              </li>
-              <li className="flex items-center">
+              </li> */}
+              {/* <li className="flex items-center">
                 <Link href="/shop">
+                <Link href="/">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     Fertilizer Shop
-                    {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
+                    <span className="lg:hidden inline-block ml-2">Share</span>
                   </a>
                 </Link>
               </li>
               <li className="flex items-center">
                 <Link href="/weather">
+                <Link href="/">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     Weather
-                    {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
+                    <span className="lg:hidden inline-block ml-2">Share</span>
                   </a>
                 </Link>
-              </li>
+              </li> */}
               <li className="flex items-center h-12">
                 <div
                   className="px-3 text-xs uppercase flex flex-row pb-1 font-bold"

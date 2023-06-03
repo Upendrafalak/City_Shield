@@ -52,21 +52,24 @@ const Navbar = () => {
                                             </a>
                                         </li> */}
                                         <li>
-                                            <Link href="/Disease">
+                                            {/* <Link href="/Disease"> */}
+                                            <Link href="/">
                                                 <a className="duration-0 block rounded py-2 pr-4 pl-3 text-xl text-gray-100 transition hover:scale-125 hover:bg-gray-100 hover:duration-150 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white">
                                                     Disease
                                                 </a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/Crop">
+                                            {/* <Link href="/Crop"> */}
+                                            <Link href="/">
                                                 <a className="duration-0 block rounded py-2 pr-4 pl-3 text-xl text-gray-100 transition hover:scale-125 hover:bg-gray-100 hover:duration-150 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white">
                                                     Crop
                                                 </a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/Fertilizer">
+                                            {/* <Link href="/Fertilizer"> */}
+                                            <Link href="/">
                                                 <a className="duration-0 block rounded py-2 pr-4 pl-3 text-xl text-gray-100 transition hover:scale-125 hover:bg-gray-100 hover:duration-150 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white">
                                                     Fertilizer
                                                 </a>
@@ -81,7 +84,8 @@ const Navbar = () => {
                                             </a>
                                         </li> */}
                                         <li>
-                                            <Link href="/Weather">
+                                            {/* <Link href="/Weather"> */}
+                                            <Link href="/">
                                                 <a className="duration-0 block rounded py-2 pr-4 pl-3 text-xl text-gray-100 transition hover:scale-125 hover:bg-gray-100 hover:duration-150 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white">
                                                     Weather
                                                 </a>
@@ -175,19 +179,22 @@ const Navbar = () => {
                                         About Us
                                     </a> */}
 
-                                    <Link href="/Disease">
+                                    {/* <Link href="/Disease"> */}
+                                    <Link href="/">
                                         <a className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                                             Disease
                                         </a>
                                     </Link>
 
-                                    <Link href="/Crop">
+                                    {/* <Link href="/Crop"> */}
+                                    <Link href="/">
                                         <a className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                                             Crop
                                         </a>
                                     </Link>
 
-                                    <Link href="/Fertilizer">
+                                    {/* <Link href="/Fertilizer"> */}
+                                    <Link href="/">
                                         <a className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                                             Fertilizer
                                         </a>
@@ -199,7 +206,8 @@ const Navbar = () => {
                                         Profit
                                     </a> */}
 
-                                    <Link href="/Weather">
+                                    {/* <Link href="/Weather"> */}
+                                    <Link href="/">
                                         <a className="duration-0 block rounded py-2 pr-4 pl-3 text-xl text-gray-100 transition hover:scale-125 hover:bg-gray-100 hover:duration-150 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white">
                                             Weather
                                         </a>

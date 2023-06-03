@@ -48,7 +48,7 @@ export default function Sidebar() {
             />
             <Link href="/" className="pt-2">
               <a className="text-blueGray-700 text-xl font-bold leading-relaxed inline-block mr-4 py-4 whitespace-nowrap uppercase ">
-                Demeter
+                Crime
               </a>
             </Link>
           </div>
@@ -74,7 +74,7 @@ export default function Sidebar() {
                 <div className="w-6/12">
                   <Link href="/">
                     <a className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0">
-                      DEMETER
+                      Crime
                     </a>
                   </Link>
                 </div>
@@ -127,7 +127,7 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Disease
+                    Report FIR
                   </a>
                 </Link>
               </li>
@@ -150,7 +150,7 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Crop
+                    Track Complaint
                   </a>
                 </Link>
               </li>
@@ -173,7 +173,7 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Fertilizer
+                    Report Cyber Bullying
                   </a>
                 </Link>
               </li>
@@ -196,7 +196,7 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Fertilizer Shop
+                    Nearest Police Station
                   </a>
                 </Link>
               </li>
@@ -219,7 +219,7 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Labs
+                    Emergency
                   </a>
                 </Link>
               </li>

@@ -9,21 +9,20 @@ import Layout from "components/Layout";
 
 export default function Index() {
   return (
-    <Layout title="Home / Demeter">
+    <Layout title="Home / Crime">
       <IndexNavbar fixed />
       <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
         <div className="container mx-auto items-center flex flex-wrap">
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-blueGray-600">
-                Demeter - Smart Agriculture
+              Filing a Complaint on National Cyber Crime Reporting Portal
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                Demeter is a software application that helps farmers manage and
-                optimize their agricultural operations.
+              This portal is an initiative of Government of India to facilitate victims/complainants to report cyber crime complaints online. This portal caters to complaints pertaining to cyber crimes only with special focus on cyber crimes against women and children. Complaints reported on this portal are dealt by law enforcement agencies/ police based on the information available in the complaints. It is imperative to provide correct and accurate details while filing complaint for prompt action.
               </p>
               <div className="mt-12">
-                <Link href="/disease">
+                <Link href="/">
                   <a className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-800 active:bg-blueGray-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
                     Get started
                   </a>
@@ -43,7 +42,7 @@ export default function Index() {
         </div>
         <img
           className="absolute top-0 b-auto right-0 pt-12 sm:w-6/12 -mt-16 sm:mt-0 w-100 max-h-860-px"
-          src="/img/homelogo.png"
+          src="https://res.cloudinary.com/djoyyxeqs/image/upload/v1676102179/design_1_zjqfuq.png"
           alt="..."
         />
       </section>
@@ -77,7 +76,7 @@ export default function Index() {
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
                 <img
                   alt="..."
-                  src="https://res.cloudinary.com/atharva7/image/upload/v1664643964/samples/planttree_af1zl9.jpg"
+                  src="https://res.cloudinary.com/drr7rbizq/image/upload/v1685714885/cyber_uftoej.jpg"
                   className="w-full align-middle rounded-t-lg"
                 />
                 <blockquote className="relative p-8 mb-4">
@@ -93,17 +92,10 @@ export default function Index() {
                     ></polygon>
                   </svg>
                   <h4 className="text-xl font-bold text-white">
-                    Demeter - The Farming Assistant
+                    Crime
                   </h4>
                   <p className="text-md font-light mt-2 text-white">
-                    Demeter is a software application that helps farmers manage
-                    and optimize their agricultural operations. It can provide a
-                    variety of features such as disease detection, fertilizer
-                    and crop recommendation and weather predictions. It include
-                    features of machine learning to provide farmers with
-                    real-time data and insights to improve efficiency and
-                    productivity. Also it provides a chat bot so that the
-                    queries of the users can be solved within minutes.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, velit ut? Excepturi ea, error harum quibusdam pariatur nulla a labore modi beatae ratione id. Distinctio ex officiis laudantium maxime optio.
                   </p>
                 </blockquote>
               </div>
@@ -131,12 +123,10 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Disease Detection
+                        CyberBullying
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        Demeter allows you to identify dangerous crop diseases
-                        and apply an individual approach to treat them, thus
-                        increasing disease prevention effectively.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste deserunt sequi consequuntur, laboriosam incidunt et cumque ipsum impedit, vitae autem iusto omnis quam totam nobis ducimus veritatis nisi corrupti labore?
                       </p>
                     </div>
                   </div>
@@ -159,13 +149,10 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Crop Recommendation
+                        Track Complaint
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        Various factors like minerals present in the soil,
-                        temperature and humidity play an important role in
-                        deciding the type of the crop. Gather more information
-                        about the same, here.
+                       Lorem ipsum dolor, sit amet consectetur adipisicing elit. At reiciendis animi ratione maiores natus impedit accusantium velit praesentium, hic fugit porro, quas dolor iure totam beatae ea minus dignissimos magni?
                       </p>
                     </div>
                   </div>
@@ -190,13 +177,11 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Fertilizer Recommendation
+                        Register Complaint Online
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        The amount of fertilizers added to soil during the
-                        period of cultivation can greatly affect the soil pH and
-                        nutrients. Know the right amount from Demeter.
-                      </p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, aliquid! Aspernatur consequatur dolore exercitationem, veritatis rem optio est debitis quas quae, eum officia. Modi, dignissimos eos? Doloremque dolores earum facilis!
+                        </p>
                     </div>
                   </div>
                   <div className="relative flex flex-col min-w-0">
@@ -218,11 +203,10 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Weather Prediction
+                        Police Station Locator
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        Weather plays an important role in Agriculture. Know the
-                        weather with predictions from Demeter.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid numquam quisquam alias in animi ullam maxime, id consequatur atque provident minus molestiae repudiandae, tempore error quod inventore voluptas quia iusto?
                       </p>
                     </div>
                   </div>
@@ -252,7 +236,7 @@ export default function Index() {
                 </svg>
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                Disease Detection
+                Cyber Bullying
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
                 Demeter allows you to identify dangerous crop diseases and apply
@@ -323,7 +307,7 @@ export default function Index() {
                 </svg>
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                Fertilizer Recommendation
+                Register Complaint Online
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
                 The amount of fertilizers added to soil during the period of
@@ -378,7 +362,7 @@ export default function Index() {
                 </svg>
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                Crop Recommendation
+                Track Complaint
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
                 Various factors like minerals present in the soil, temperature
@@ -449,7 +433,7 @@ export default function Index() {
                 </svg>
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
-                Weather Prediction
+                Police Station Locator
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
                 Weather plays an important role in Agriculture. Know the weather
@@ -512,7 +496,7 @@ export default function Index() {
             <div className="w-full text-center lg:w-8/12">
               <h3 className="font-semibold text-3xl">Let&apos;s get started</h3>
               <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
-                Smart Agriculture - Cultivate efficiently with us!
+                {/* Smart Agriculture - Cultivate efficiently with us! */}
               </p>
               <div className="sm:block flex flex-col mt-10">
                 <Link href="/disease">

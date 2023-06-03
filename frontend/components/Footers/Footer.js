@@ -27,10 +27,11 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
-              <h4 className="text-3xl font-semibold">Demeter</h4>
+              <h4 className="text-3xl font-semibold">Crime</h4>
               <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-                Demeter is a software application that helps farmers manage and
-                optimize their agricultural operations.
+                {/* Demeter is a software application that helps farmers manage and
+                optimize their agricultural operations. */}
+                lorem
               </h5>
               {/* <div className="mt-6 lg:mb-0 mb-6">
                 <button

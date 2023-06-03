@@ -8,25 +8,25 @@ export default function Disease() {
   console.log(session);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const securePage = () => {
-      if (status === "unauthenticated") {
-        signIn();
-      } else {
-        setLoading(false);
-      }
-    };
-    securePage();
-  });
+  // useEffect(() => {
+  //   const securePage = () => {
+  //     if (status === "unauthenticated") {
+  //       signIn();
+  //     } else {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   securePage();
+  // });
 
-  if (loading) {
-    return <h2 style={{ marginTop: 100, textAlign: "center" }}>LOADING...</h2>;
-  }
+  // if (loading) {
+  //   return <h2 style={{ marginTop: 100, textAlign: "center" }}>LOADING...</h2>;
+  // }
   return (
     <Admin
       title="Disease Detection"
       headerText="Upload Image to detect crop disease"
-      image={session.user.image}
+      // image={session.user.image}
     >
       <div className="flex flex-wrap mt-4 justify-center">
         <div className="w-full mb-12 xl:mb-0 px-4">
