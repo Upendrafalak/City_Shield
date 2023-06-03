@@ -2,13 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 
 const CrimeForm = () => {
-  const [formData, setFormData] = useState({
-    fullname: "",
-    crime_location: "",
-    crime_details: "",
-    email: "",
-    number: 0,
-  });
+  // const [formData, setFormData] = useState({
+  //   fullname: "",
+  //   crime_location: "",
+  //   crime_details: "",
+  //   email: "",
+  //   number: 0,
+  // });
   const [fullname, setFullname] = useState("");
   const [crime_location, setCrime_location] = useState("");
   const [evidance, setEvidance] = useState("");
@@ -42,9 +42,11 @@ const CrimeForm = () => {
   const handleNumberChange = (e) => {
     setNumber(e.target.value);
   };
+
   const handleImageChange = (e) => {
     setImageSrc(e.target.value);
   };
+
 
   const handleCrime_detailsChange = (e) => {
     setCrime_details(e.target.value);
@@ -63,45 +65,25 @@ const CrimeForm = () => {
   //   };
 
   const handleSubmit = async (e) => {
+    console.log();
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("fullname", fullname);
-    formData.append("crime_location", crime_location);
-    formData.append("evidance", evidance);
-    formData.append("email", email);
-    formData.append("number", number);
-    console.log(e.currentTarget);
-    // formData.append("packPrice", packPrice);
-    // formData.append("firstLineDesignation", firstLineDesignation);
-    // formData.append("weightKilograms", weightKilograms);
-    setImageSrc("");
-    try {
-      const response = await axios.post("/api/crimes", formData);
-      console.log(response.data);
-      // reset form fields
-      setFullname("");
-      setCrime_location("");
-      setEvidance("");
-      setEmail("");
-      setNumber("");
-      
-      //   setPackPrice("");
-      //   setFirstLineDesignation(false);
-      //   setWeightKilograms("");
-    } catch (error) {
-      console.log(error);
-    }
-    formData.append("crime_details", crime_details);
+    // const formData = new FormData();
+    // formData.append("fullname", fullname);
+    // formData.append("crime_location", crime_location);
+    // formData.append("evidance", evidance);
+    // formData.append("email", email);
+    // formData.append("number", number);
+    // formData.append("crime_details", crime_details);
     // formData.append("packPrice", packPrice);
     // formData.append("firstLineDesignation", firstLineDesignation);
     // formData.append("weightKilograms", weightKilograms);
     await axios
       .post("http://localhost:3000/api/crimes", {
-        fullname: formData.fullname,
-        crime_location: formData.crime_location,
-        crime_details: formData.crime_details,
-        email: formData.email,
-        number: Number(formData.number),
+        fullname: fullname,
+        crime_location: crime_location,
+        crime_details: crime_details,
+        email: email,
+        number: number,
       })
       .then(function (response) {
         data = response.data;
@@ -112,13 +94,13 @@ const CrimeForm = () => {
       .catch(function (error) {
         console.log(error);
       });
-    setFormData({
-      fullname: "",
-      crime_location: "",
-      crime_details: "",
-      email: "",
-      number: 0,
-    });
+    // setFormData({
+    //   fullname: "",
+    //   crime_location: "",
+    //   crime_details: "",
+    //   email: "",
+    //   number: 0,
+    // });
   };
 
   return (
@@ -129,7 +111,7 @@ const CrimeForm = () => {
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="country"
+                htmlFor="fullname"
               >
                 Full Name:
                 <input
@@ -143,7 +125,7 @@ const CrimeForm = () => {
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="shipmentmode"
+                htmlFor="crime_location"
               >
                 Crime Location:
                 <input
@@ -187,7 +169,7 @@ const CrimeForm = () => {
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="unitOfMeasure"
+                htmlFor="email"
               >
                 Email Adress:
                 <input
@@ -201,7 +183,7 @@ const CrimeForm = () => {
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="lineItemValue"
+                htmlFor="number"
               >
                 Phone Number:
               </label>
@@ -301,6 +283,7 @@ const CrimeForm = () => {
               <button
                 type="submit"
                 className="w-96 h-12 flex justify-center items-center text-md text-white bg-blueGray-800 hover:bg-blueGray-800 transition-all font-medium rounded-lg px-5 py-2.5 text-center"
+                onClick={handleSubmit}
               >
                 Submit
               </button>
