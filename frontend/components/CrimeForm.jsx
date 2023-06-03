@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Link from "next/link";
-import CrimeFormImage from "./CrimeFormImage";
+import { read } from "@popperjs/core";
 
 const CrimeForm = () => {
   // const [formData, setFormData] = useState({
@@ -17,7 +16,7 @@ const CrimeForm = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [imageSrc, setImageSrc] = useState();
-  const [uploadImage, setuploadImage] = useState();
+  const [uploadImage, setUploadImage] = useState();
 
   const [crime_details, setCrime_details] = useState("");
   //   const [packPrice, setPackPrice] = useState("");
@@ -31,6 +30,18 @@ const CrimeForm = () => {
   const handleCrime_locationChange = (e) => {
     setCrime_location(e.target.value);
   };
+
+  function handleImageChange(e) {
+    const render = new FileReader();
+
+    render.onload = function (onLoadEvent) {
+      setImageSrc(onLoadEvent.target.result);
+      setUploadImage(undefined);
+    };
+
+    ReadableStream.readAsDataURL(e.target.files[0]);
+    console.log(e);
+  }
 
   const handleEvidanceChange = (e) => {
     setEvidance(e.target.value);
@@ -67,6 +78,9 @@ const CrimeForm = () => {
   const handleSubmit = async (e) => {
     console.log();
     e.preventDefault();
+
+    console.log(imageSrc);
+
     // const formData = new FormData();
     // formData.append("fullname", fullname);
     // formData.append("crime_location", crime_location);
@@ -225,6 +239,55 @@ const CrimeForm = () => {
                 <img src={imageSrc} alt="img" />
               </div>
             )} */}
+            {/* )} */}
+            {/* <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="packPrice"
+              >
+                Pack Price:
+              </label>
+              <input
+                className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                type="text"
+                id="packPrice"
+                value={packPrice}
+                onChange={handlePackPriceChange}
+              />
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="firstLineDesignation"
+              >
+                First Line Designation:
+              </label>
+              <select
+                className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                id="firstLineDesignation"
+                value={firstLineDesignation}
+                onChange={handleFirstLineDesignationChange}
+              >
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="weight"
+              >
+                Weight (Kilograms):
+              </label>
+              <input
+                className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                type="text"
+                id="weight"
+                value={weightKilograms}
+                onChange={handleWeightKilogramsChange}
+              />
+            </div> */}
 
             <div className="flex justify-center my-6">
               {/* <button

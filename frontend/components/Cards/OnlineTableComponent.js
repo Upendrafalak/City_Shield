@@ -1,7 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Link from "next/link";
 
-export default function TableComponent({ crimes }) {
+export default function OnlineTableComponent({ onlinecrimes }) {
+  const handleClick = async (tweet) => {
+    const requestBody = {
+      tweet: tweet,
+    };
+
+    try {
+      const response = await fetch("http://127.0.0.1:5000/analyzetweets", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        }, // Change to the desired HTTP method (POST, GET, etc.)
+        // Add any necessary headers or request body data here
+        body: JSON.stringify(requestBody),
+      });
+      if (response.ok) {
+        const result = await response.json(); // Parse the response body as JSON
+        // Access the returned array from the Flask server
+        console.log("Analysis result:", result);
+        alert(JSON.stringify(result));
+        // Perform any necessary operations with the result array
+      } else {
+        console.error("Analysis request failed");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
+  };
+
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
@@ -47,22 +76,27 @@ export default function TableComponent({ crimes }) {
               </tr>
             </thead>
             <tbody>
-              {crimes.map((item) => (
+              {onlinecrimes.map((item) => (
                 <tr key={item}>
                   <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                     {item.fullname}
                   </th>
                   <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                    {item.crime_location}
+                    {item.tweet}
+                  </th>
+                  <Link href={"https://twitter.com/@" + item.username}>
+                    <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                      {item.username}
+                    </th>
+                  </Link>
+                  <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                    {item.number}
                   </th>
                   <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                     {item.email}
                   </th>
                   <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                    {item.number}
-                  </th>
-                  <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                    {item.crime_details}
+                    {item.progress}
                   </th>
                   <th>
                     <button
@@ -84,6 +118,7 @@ export default function TableComponent({ crimes }) {
                     <button
                       className="bg-green-500 text-white active:bg-green-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
+                      onClick={() => handleClick(item.tweet)}
                     >
                       Analyze
                     </button>

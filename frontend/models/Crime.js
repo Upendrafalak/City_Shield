@@ -12,6 +12,11 @@ const CrimeSchema = new mongoose.Schema(
       required: true,
       maxlength: 60,
     },
+    crime_type:{
+      type:String,
+      required: true,
+      maxlength: 60,
+    },
     crime_details: {
       type: String,
       required: true,
