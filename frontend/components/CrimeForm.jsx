@@ -2,15 +2,26 @@ import { useState } from "react";
 import axios from "axios";
 
 const CrimeForm = () => {
+  const [formData, setFormData] = useState({
+    fullname: "",
+    crime_location: "",
+    crime_details: "",
+    email: "",
+    number: 0,
+  });
   const [fullname, setFullname] = useState("");
   const [crime_location, setCrime_location] = useState("");
   const [evidance, setEvidance] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
+<<<<<<< HEAD
   const [imageSrc, setImageSrc] = useState();
   const [uploadImage, setuploadImage] = useState();
 
 
+=======
+  const [crime_details, setCrime_details] = useState("");
+>>>>>>> 9dd68f016196c2a843b4e0f4c572571e51d7bc2f
   //   const [packPrice, setPackPrice] = useState("");
   //   const [firstLineDesignation, setFirstLineDesignation] = useState(false);
   //   const [weightKilograms, setWeightKilograms] = useState("");
@@ -34,9 +45,17 @@ const CrimeForm = () => {
   const handleNumberChange = (e) => {
     setNumber(e.target.value);
   };
+<<<<<<< HEAD
   const handleImageChange = (e) => {
     setImageSrc(e.target.value);
   };
+=======
+
+  const handleCrime_detailsChange = (e) => {
+    setCrime_details(e.target.value);
+  };
+
+>>>>>>> 9dd68f016196c2a843b4e0f4c572571e51d7bc2f
   //   const handlePackPriceChange = (e) => {
   //     setPackPrice(e.target.value);
   //   };
@@ -57,6 +76,7 @@ const CrimeForm = () => {
     formData.append("evidance", evidance);
     formData.append("email", email);
     formData.append("number", number);
+<<<<<<< HEAD
     console.log(e.currentTarget);
     // formData.append("packPrice", packPrice);
     // formData.append("firstLineDesignation", firstLineDesignation);
@@ -78,6 +98,36 @@ const CrimeForm = () => {
     } catch (error) {
       console.log(error);
     }
+=======
+    formData.append("crime_details", crime_details);
+    // formData.append("packPrice", packPrice);
+    // formData.append("firstLineDesignation", firstLineDesignation);
+    // formData.append("weightKilograms", weightKilograms);
+    await axios
+      .post("http://localhost:3000/api/crimes", {
+        fullname: formData.fullname,
+        crime_location: formData.crime_location,
+        crime_details: formData.crime_details,
+        email: formData.email,
+        number: Number(formData.number),
+      })
+      .then(function (response) {
+        data = response.data;
+        console.log(data);
+        setOutput(data);
+        console.log(output);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    setFormData({
+      fullname: "",
+      crime_location: "",
+      crime_details: "",
+      email: "",
+      number: 0,
+    });
+>>>>>>> 9dd68f016196c2a843b4e0f4c572571e51d7bc2f
   };
 
   return (
@@ -110,6 +160,20 @@ const CrimeForm = () => {
                   type="text"
                   value={crime_location}
                   onChange={handleCrime_locationChange}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="crime_details"
+              >
+                Crime Details:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="text"
+                  value={crime_details}
+                  onChange={handleCrime_detailsChange}
                 />
               </label>
             </div>
