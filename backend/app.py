@@ -17,6 +17,37 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
 model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
+# 3:-rape  2:-murder   0:-burglary  1:-fraud
+pklmodel = pickle.load(open("models/model_rank.pkl","rb"))
+@app.route("/assignofficer",methods=["POST"])
+def assignofficer():
+    data = request.get_json()
+    crime = data['crime']
+    # location = data['location']
+    money = data['money']
+    if crime == "rape":
+        crime_no = 3
+    elif crime == "murder":
+        crime_no = 2
+    elif crime == "burglary":
+        crime_no = 0
+    elif crime == "fraud":
+        crime_no = 1
+    designation_no = pklmodel.predict([[crime_no,money]]).reshape(-1,1).astype(int)
+    if designation_no == 0:
+        designation = ["ASP"]
+    elif designation_no == 1:
+        designation = ["DSP"]
+    elif designation_no == 2:
+        designation = ["Inspector"]
+    json_data = json.dumps(designation)
+    return json_data
+    
+
+
+
+
+
 @app.route("/analyzetweets", methods=["POST"])
 def analyzetweets():
     data = request.get_json()
