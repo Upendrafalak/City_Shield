@@ -14,7 +14,14 @@ const CrimeForm = () => {
   const [evidance, setEvidance] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
+<<<<<<< HEAD
+  const [imageSrc, setImageSrc] = useState();
+  const [uploadImage, setuploadImage] = useState();
+
+
+=======
   const [crime_details, setCrime_details] = useState("");
+>>>>>>> 9dd68f016196c2a843b4e0f4c572571e51d7bc2f
   //   const [packPrice, setPackPrice] = useState("");
   //   const [firstLineDesignation, setFirstLineDesignation] = useState(false);
   //   const [weightKilograms, setWeightKilograms] = useState("");
@@ -39,9 +46,15 @@ const CrimeForm = () => {
     setNumber(e.target.value);
   };
 
+  const handleImageChange = (e) => {
+    setImageSrc(e.target.value);
+  };
+
+
   const handleCrime_detailsChange = (e) => {
     setCrime_details(e.target.value);
   };
+
 
   //   const handlePackPriceChange = (e) => {
   //     setPackPrice(e.target.value);
@@ -186,6 +199,35 @@ const CrimeForm = () => {
                 onChange={handleNumberChange}
               />
             </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="lineItemValue"
+              >
+                <span class=" text-base leading-normal">Select a file</span>
+                <svg
+              class="w-8 h-8"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+            </svg>
+            
+            <input
+              id="file"
+              name="file"
+              type="file"
+              // class="hidden"
+              onChange={handleImageChange}
+              required
+            />
+            </label></div>
+            {imageSrc && (
+          <div className="flex justify-center mt-6">
+            <img src={imageSrc} alt="img" />
+          </div>
+        )}
             {/* <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"

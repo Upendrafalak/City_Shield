@@ -110,7 +110,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
-                <Link href="/disease">
+                <Link href="/crime">
                   <a
                     className={
                       "text-sm uppercase py-3 font-bold block " +
@@ -156,7 +156,7 @@ export default function Sidebar() {
               </li>
 
               <li className="items-center">
-                <Link href="/fertilizer">
+                <Link href="/onlinecrime">
                   <a
                     className={
                       "text-sm uppercase py-3 font-bold block " +

@@ -73,7 +73,7 @@ export default function Navbar(props) {
                 <IndexDropdown />
               </li> */}
               <li className="flex items-center">
-                <Link href="/CrimeForm">
+                <Link href="/crime">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     Raise a FIR
                     {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
@@ -82,7 +82,7 @@ export default function Navbar(props) {
               </li>
               <li className="flex items-center">
                 {/* <Link href="/disease"> */}
-                <Link href="/ReportBullying">
+                <Link href="/onlinecrime">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     Report Cyberbullying
                     {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
