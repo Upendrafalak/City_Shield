@@ -109,24 +109,6 @@ const CrimeForm = () => {
       .catch(function (error) {
         console.log(error);
       });
-
-      await axios
-      .post("http:127.0.0.1:5000/pywhat", {
-        fullname: fullname,
-        // crime_location: crime_location,
-        // crime_details: crime_details,
-        // email: email,
-        number: number,
-      })
-      .then(function (response) {
-        data = response.data;
-        console.log(data);
-        setOutput(data);
-        console.log(output);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
     // setFormData({
     //   fullname: "",
     //   crime_location: "",

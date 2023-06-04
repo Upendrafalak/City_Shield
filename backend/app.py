@@ -1,4 +1,3 @@
-
 from flask_cors import CORS
 from flask import Flask, jsonify, request
 import json
@@ -12,9 +11,6 @@ import qrcode
 from flask_cors import CORS
 import werkzeug
 import datetime
-import pywhatkit
-from datetime import datetime
-
 app = Flask(__name__)
 # CORS(app)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
@@ -92,32 +88,6 @@ def analyzetweets():
     json_data = json.dumps(ans_list)
     return json_data
 
-
-@app.route("/pywhat",methods=["POST"])
-def pywhat():
-    data = request.get_json()
-    name=data["fullname"]
-    number=data["number"]
-    current_time = datetime.now().time()
-    new_time = current_time + timedelta(minutes=1)
-    current_hour = new_time.hour
-    current_minute = new_time.minute
-    pywhatkit.sendwhatmsg(number,name, current_hour,current_minute)
-
-
-
-# phone_number = ""
-
-# Specify the message you want to send
-# message = "Hello, this is a test message!"
-
-# Specify the time in 24-hour format when you want to send the message
-# For example, 13:30 represents 1:30 PM
-# hour = 13
-# minute = 30
-
-# Use the sendwhatmsg() function to send the message
-# pywhatkit.sendwhatmsg(phone_number, message, hour, minute)
 
 
 

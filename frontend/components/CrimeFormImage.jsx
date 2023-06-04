@@ -63,9 +63,9 @@ const handleImageChange = (e) => {
       formData.append('file', file);
     }
 
-    for (let i = 0; i < fileInput.files.length; i++) {
-        const files = fileInput.files[i];
-        formData.append('files', files);
+    // for (let i = 0; i < fileInput.files.length; i++) {
+    //     const files = fileInput.files[i];
+    //     formData.append('files', files);
     //   }
     formData.append('upload_preset', 'crime_images');
     const data = await fetch('https://api.cloudinary.com/v1_1/drr7rbizq/image/upload',{
@@ -76,32 +76,15 @@ const handleImageChange = (e) => {
       setImageSrc(data.secure_url);
       setUploadImage(data);
 
-  //     const response = await 
-  //     ('http:// http://127.0.0.1:5000/secure-url', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify({ secureUrl: data.secure_url }),
-  // });
-
-  const axios = require('axios');
-
-const data1 = {
-  url: data.secure_url,
-  string1:"sdfdsf",
-  string2:"sdfsd",
-  string3:"sdfd"
-};
-
-axios.post('http://127.0.0.1:5000/secure-url', data1)
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
+      const response = await 
+      ('http://localhost:8000/secure-url', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ secureUrl: data.secure_url }),
   });
-}
+
       // console.log(data.secure_url);
       // const url=data.secure_url;
     // const form = document.getElementById("file");
@@ -213,9 +196,7 @@ axios.post('http://127.0.0.1:5000/secure-url', data1)
   );
 };
 
-
 export default CrimeFormImage;
-
 {
   /* <div className="w-full mb-12 xl:mb-0 px-4">
 <TransportForm/>
